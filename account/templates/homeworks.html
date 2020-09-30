@@ -1,0 +1,25 @@
+{% block content %}
+
+    <h1>
+        HOMEWORKS
+    </h1>
+    
+    {% if role == 'student' %}
+        {% for obj in works  %}
+            <a href="{{ obj.get_absolute_url }}">{{ obj.title }}</a>
+            <br>
+        {% endfor %}
+    {% endif %}
+
+    
+    {% if role == 'teacher' %}
+        {% for obj in works %}
+            <a href="{{ obj.get_absolute_url }}">{{ obj.question }} - {{ obj.student }}</a>
+            <br>
+        {% endfor %}   
+    {% endif %}
+        
+        
+
+        
+{% endblock content %}

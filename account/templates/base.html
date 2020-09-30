@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        {% block title %}
+            
+        {% endblock title %}
+    </title>
+</head>
+<body>
+    {% for group in request.user.groups.all %}
+        {% if group.name == 'teacher' %}
+            ِyour role: teacher
+        {% elif group.name == 'student' %}
+        ِ    your role: student
+        {% else %}
+             you have no role
+        {% endif %}
+    {% endfor %}
+
+    {% block content %}
+        
+    {% endblock content %}
+</body>
+</html>

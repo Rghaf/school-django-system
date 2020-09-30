@@ -1,0 +1,13 @@
+{% block content %}
+
+    <h1>
+        HOMEWORK
+    </h1>
+    <hr>
+    <h2>{{ obj.student }}</h2>
+    <h3>{{ obj.question }}</h3>
+    {% if obj.answer %}
+        <a href="{{ obj.answer.url }}">فایل سوال</a>
+    {% endif %}
+        
+{% endblock content %}

@@ -1,0 +1,15 @@
+{% block content %}
+
+    <h1>
+        HOMEWORK
+    </h1>
+    <hr>
+    <h2>{{ work.title }}</h2>
+    <h3>{{ work.lesson }}</h3>
+    <p>{{ work.question }}</p>
+    {% if work.question_file %}
+        <a href="{{ work.question_file.url }}">فایل سوال</a>
+    {% endif %}
+    <a href="{% url 'app-school:add-answer' pk=work.pk %}"><button>Send Answer</button></a>
+        
+{% endblock content %}
